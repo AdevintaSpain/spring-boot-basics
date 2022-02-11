@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import java.time.Duration
@@ -24,6 +25,9 @@ class ApplicationTest {
       System.setProperty("bar.stock", "388")
     }
   }
+
+  @Value("\${spring.application.name}")
+  private lateinit var applicationName: String
 
   @Autowired
   private lateinit var tik: Tik
@@ -59,5 +63,10 @@ class ApplicationTest {
       .isEqualTo(388)
     assertThat(bar2.timeout)
       .isEqualTo(Duration.ofSeconds(53))
+  }
+
+  @Test
+  fun `should load application name`() {
+    assertThat(applicationName).isEqualTo("spring-boot-basics")
   }
 }
