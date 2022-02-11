@@ -2,3 +2,6 @@ spring:
   profiles:
     active: "dev"
 
+bar:
+  stock: 65
+  timeout: "PT53S"
