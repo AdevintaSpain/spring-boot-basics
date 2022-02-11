@@ -17,3 +17,8 @@ Created with [this spring initialzr configuration](https://start.spring.io/#!typ
 
 curl -w'\n' -v http://localhost:8080/hello
 ```
+
+## Documentation
+
+* [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+* [Spring Boot Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config)
